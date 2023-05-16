@@ -4,24 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./script.js" defer></script>
     <title>etch-a-sketch</title>
   </head>
   <body>
     <header id="header">
-      <h1 id="header__title">Etch-a-Sketch</h1>
+      <h1 id="header__title">Etch-A-Sketch</h1>
     </header>
     <main id="main">
-      <section id="left">
-        <div id="left__display-color">display color</div>
-        <div id="left__btn-select-color">Select color</div>
-        <div id="left__btn-clear-canvas">Clear canvas</div>
-        <div id="left__choose-squares">choose-squares</div>
-      </section>
-      <section id="right">
-        <div id="right__canvas">canvas</div>
-      </section>
+      <!-- buttons -->
+      <div id="btns">
+        <button id="btns__random" onclick="changeColor('random')">
+          random
+        </button>
+        <button id="btns__random" onclick="changeColor('white')">White</button>
+        <button id="btns__random" onclick="changeColor('black')">black</button>
+        <button id="btns__random" onclick="resetCanvas()">clear</button>
+        <div id="main__input-container">
+          <p id="main__input-text">Select number from 8 to 64</p>
+          <input
+            type="text"
+            placeholder="select squares"
+            value="16"
+            id="main__input-box"
+            onchange="changeSize(this.value)"
+          />
+          <button id="main__set-size">size</button>
+        </div>
+      </div>
+
+      <!-- buttons -->
+
+      <div id="drawing">
+        <div id="drawing__canvas"></div>
+      </div>
     </main>
   </body>
 </html>
+<!-- <div id="btns">
+  <button onclick="changeColor('random')" id="btns__random">
+    Random
+  </button>
+
+  <button onclick="changeColor('black')" id="btns__black">Black</button>
+
+  <button onclick="changeColor('white')" id="btns__white">White</button>
+
+  <button onclick="resetCanvas()" id="btns__reset">Reset</button>
+
+  <div id="main__input-container">
+    <p id="main__input-text">Select number from 8 to 64</p>
+    <input
+      type="text"
+      placeholder="select squares"
+      value="16"
+      id="main__input-box"
+      onchange="changeSize(this.value)"
+    />
+    <button id="main__set-size">Set size</button>
+  </div>
+</div> -->
